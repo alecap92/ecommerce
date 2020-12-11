@@ -1,10 +1,14 @@
 import React,{Fragment} from 'react'
+import Navbar from './components/includes/navbar/Navbar'
+import Inicio from './components/pages/Inicio'
 
 const App = () => {
     return (
         <Fragment>
-            <h1>Este es mi ecommerce</h1> 
-            <p>Hola!</p> 
+            <Navbar/>
+        <div className="container p-5">
+            <Inicio/>
+        </div>
         </Fragment>
     )
 }
