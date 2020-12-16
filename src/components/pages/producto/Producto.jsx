@@ -1,40 +1,58 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./producto.css";
 import ProductoApi from "../../includes/productoApi/ProductoApi.json";
-
 import Cantidad from "./cantidad/Cantidad";
-const Producto = () => {
- 
+
+const Producto = ({ accion }) => {
+  const [items, setItems] = useState([]);
+
+  const getProducts = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(ProductoApi);
+    }, 2000);
+  });
+
+  useEffect(() => {
+    getProducts.then((rta) => setItems(rta));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
-        <div className="row">
-        
-      {ProductoApi.map((producto) => (
-        <div className="card" key={producto.id}>
-          <img
-            src={producto.imagen}
-            className="card-img-top"
-            alt="algo"
-            
-            height="300px"
-          />
-          <div className="card-body">
-            <h5 className="card-title">{producto.nombre}</h5>
-            <p className="card-text">
-            {producto.descripcion}
-            </p>
-            <strong>{producto.precio}</strong>
+      <div className="row">
+        {
+          items.length ? 
+          <>  
+           { items.map((item) => (
+            <div className="card" key={item.id}>
+              <img
+                src={item.imagen}
+                className="card-img-top"
+                alt="algo"
+                height="300px"
+              />
+              <div className="card-body">
+                <h5 className="card-title">{item.nombre}</h5>
+                <p className="card-text">{item.descripcion}</p>
+                <strong>{item.precio}</strong>
 
-            <Cantidad id={producto.id} stock={5} initial={1} />
-
-            <br/>
-            <a href="/" className="btn btn-primary">
-            Comprar
-            </a>
-          </div>
-        </div>
-      ))}
+                <Cantidad id={item.id} stock={5} initial={1} />
+                <br />
+                <button
+                  onClick={() => {
+                    accion();
+                  }}
+                  className="btn btn-primary"
+                >
+                  Agregar al Carrito
+                </button>
+              </div>
+            </div>
+            ))}
+          </>
+         : (
+          <p>cargando items</p>
+        )}
       </div>
     </>
   );

@@ -4,26 +4,22 @@ import { FaMinus } from "react-icons/fa";
 import "./cantidad.css";
 
 const Cantidad = ({ id, stock, initial }) => {
+  
   const [cantidad, setCantidad] = useState(initial);
 
-  const operacion = (accion) => {
-    if (cantidad >= initial) {
-        if(cantidad < stock){
-            accion ? setCantidad(cantidad + 1) : setCantidad(cantidad - 1);
-        }else{setCantidad(initial)}
-    } else {
-      setCantidad(initial);
-    }
-  };
+  const sumar = () => {
+    cantidad < stock ? setCantidad(cantidad + 1) : setCantidad(stock)
+  }
+  const restar = () => {
+    cantidad > 1 ? setCantidad(cantidad - 1) : setCantidad(initial)
+  }
 
   return (
     <>
       <div className="row row-cols-auto">
         <div>
           <FaMinus
-            onClick={() => {
-              operacion(false);
-            }}
+            onClick={()=>{restar()}}
           />
         </div>
         <input
@@ -31,12 +27,11 @@ const Cantidad = ({ id, stock, initial }) => {
           className="col-2"
           value={cantidad}
           id={`cantidad${id}`}
+          readOnly
         />
         <div>
           <FaPlus
-            onClick={() => {
-              operacion(true);
-            }}
+             onClick={()=>{sumar()}}
           />
         </div>
       </div>
