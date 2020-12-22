@@ -1,10 +1,19 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Producto from './producto/Producto'
 
 const Inicio = () => {
     
-    const agregarCarrito = () => {
+    const [carrito, setCarrito] = useState([])
+
+
+
+
+    const agregarCarrito = (item) => {
         alert(`Agregado al carrito `);
+        setCarrito([
+           ...carrito,
+            item
+        ])
       }
     
    

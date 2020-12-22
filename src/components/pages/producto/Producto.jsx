@@ -40,7 +40,7 @@ const Producto = ({ accion }) => {
                 <br />
                 <button
                   onClick={() => {
-                    accion();
+                    accion(item);
                   }}
                   className="btn btn-primary"
                 >
