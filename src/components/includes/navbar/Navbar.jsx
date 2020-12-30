@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import './navbar.css'
 const Navbar = () => {
@@ -13,7 +14,8 @@ const Navbar = () => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarID">
                             <div className="navbar-nav">
-                                <a className="nav-link active" aria-current="page" href="/">Inicio</a>   
+                                <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>   
+                                <Link className="nav-link active" aria-current="page" to="/categorias">Categorias</Link>   
                             </div>
                         </div>
                     </div>

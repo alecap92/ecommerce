@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from 'react-router-dom';
 import "./producto.css";
 import ProductoApi from "../../includes/productoApi/ProductoApi.json";
 import Cantidad from "./cantidad/Cantidad";
@@ -32,10 +33,9 @@ const Producto = ({ accion }) => {
                 height="300px"
               />
               <div className="card-body">
-                <h5 className="card-title">{item.nombre}</h5>
+                <Link to={`/producto/${item.nombre}`}><h5 className="card-title">{item.nombre}</h5></Link> 
                 <p className="card-text">{item.descripcion}</p>
                 <strong>{item.precio}</strong>
-
                 <Cantidad id={item.id} stock={5} initial={1} />
                 <br />
                 <button
@@ -44,7 +44,7 @@ const Producto = ({ accion }) => {
                   }}
                   className="btn btn-primary"
                 >
-                  Agregar al Carrito
+                  Ver Producto
                 </button>
               </div>
             </div>

@@ -1,17 +1,14 @@
 import React,{Fragment} from 'react'
-import Navbar from './components/includes/navbar/Navbar'
-import Inicio from './components/pages/Inicio';
-import ProductoDetalle from './components/pages/producto/ProductoDetalle';
+// import Inicio from './components/pages/Inicio';
+
+import Routes from './components/route/Routes';
 
 const App = () => {
     return (
         <Fragment>
-            <Navbar/>
-       
-        <div className="container p-5">
-            <Inicio/>
-        </div>
-        <ProductoDetalle />
+           
+           <Routes/>
+        
         </Fragment>
     )
 }
