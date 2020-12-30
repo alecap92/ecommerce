@@ -3,7 +3,7 @@ import ProductoApi from "../../includes/productoApi/ProductoApi.json";
 import {useParams} from 'react-router-dom'
 import Cantidad from './cantidad/Cantidad';
 
-const ProductoDetalle = () => {
+const ProductoDetalle = ({ accion }) => {
 
       const { productName } = useParams ();
       
@@ -42,6 +42,14 @@ const ProductoDetalle = () => {
                     <h3>{items.precio}</h3>
                     <Cantidad id={items.id} stock={5} initial={1}/>
                     <button className="btn btn-primary mt-3">Agregar al Carrito</button>
+                    <button
+                  onClick={() => {
+                    accion(items);
+                  }}
+                  className="btn btn-primary"
+                >
+                  Ver Producto
+                </button>
                </div>
            </div>
             }
