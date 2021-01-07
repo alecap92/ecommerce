@@ -15,7 +15,9 @@ const Navbar = () => {
                         <div className="collapse navbar-collapse" id="navbarID">
                             <div className="navbar-nav">
                                 <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>   
-                                <Link className="nav-link active" aria-current="page" to="/categorias">Categorias</Link>   
+                                <Link className="nav-link active" aria-current="page" to="/categoria/camionetas">Camionetas</Link>   
+                                <Link className="nav-link active" aria-current="page" to="/categoria/motocicleta">Motos</Link>   
+                                <Link className="nav-link active" aria-current="page" to="/categoria/carro">Carros</Link>   
                             </div>
                         </div>
                     </div>

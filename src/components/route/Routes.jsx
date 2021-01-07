@@ -5,6 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import Navbar from "../includes/navbar/Navbar";
+import Category from "../pages/catogory/Category";
 import Inicio from "../pages/Inicio";
 // import Producto from "../pages/producto/Producto";
 import ProductoDetalle from "../pages/producto/ProductoDetalle";
@@ -23,8 +24,8 @@ export const AppRouter = () => {
             <Route exact path="/producto/:productName">
                 <ProductoDetalle/>
              </Route>
-             <Route exact path="/categoria/:category">
-                <Inicio/>
+             <Route exact path="/categoria/:nombreCategoria">
+                <Category/>
              </Route>
              <Route exact path="/">
                 <Inicio/>

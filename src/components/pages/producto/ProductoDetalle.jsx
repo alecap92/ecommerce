@@ -5,15 +5,17 @@ import Cantidad from './cantidad/Cantidad';
 
 const ProductoDetalle = ({ accion }) => {
 
-      const { productName } = useParams ();
-      
+    const { productName } = useParams ();
 
     const [items, setItems] = useState([]);
    
     const getProducts = new Promise((resolve, reject) => {
       setTimeout(() => {
-        // aqui?????
-        resolve(ProductoApi[0]);
+        const lista =  ProductoApi.find((item)=> 
+          item.nombre === productName
+
+        );
+        resolve(lista);
       }, 2000);
     });
   
@@ -22,7 +24,10 @@ const ProductoDetalle = ({ accion }) => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   
-
+    const carrito = (cantidad)=>{
+      
+      alert(`Meli agrego ${cantidad}  de ${items.nombre}`)
+    }
 
     return (
         <>
@@ -40,16 +45,8 @@ const ProductoDetalle = ({ accion }) => {
                      <h1>{items.nombre}</h1>
                     <p>{items.descripcion}</p>
                     <h3>{items.precio}</h3>
-                    <Cantidad id={items.id} stock={5} initial={1}/>
-                    <button className="btn btn-primary mt-3">Agregar al Carrito</button>
-                    <button
-                  onClick={() => {
-                    accion(items);
-                  }}
-                  className="btn btn-primary"
-                >
-                  Ver Producto
-                </button>
+                    <Cantidad id={items.id} stock={5} initial={1} carrito={carrito}/>
+                  
                </div>
            </div>
             }

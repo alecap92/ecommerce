@@ -1,26 +1,58 @@
 [
     {
-        "nombre":"Ironman",
-        "descripcion":"Figura coleccionable de Ironman",
-        "imagen":"https://images.unsplash.com/photo-1507629479746-d7ac4064838d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2167&q=80",
+        "nombre":"JeepCherokee",
+        "descripcion":"Camioneta automatica con traccion 4x4, 9 velocidades",
+        "imagen":"https://acs2.blob.core.windows.net/imgcatalogo/l/VA_13a417cb5693485f860b2b08e2beb1c5.jpg",
         "precio":200,
-        "categoria":"figuras",
+        "categoria":"camioneta",
         "id":0
     },
     {
-        "nombre":"Aquaman",
-        "descripcion":"Figura coleccionable de Aquaman",
-        "imagen":"https://images.unsplash.com/photo-1552481902-9ef2babf332d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80",
+        "nombre":"Rav4",
+        "descripcion":"Camioneta automatica con traccion 4x4, 9 velocidades",
+        "imagen":"https://piks-eldesmarqueporta.netdna-ssl.com/thumbs/680/bin/2019/11/10/toyota_rav4_2jpg.jpg",
         "precio":180,
-        "categoria":"figuras",
+        "categoria":"camioneta",
         "id":1
     },
     {
-        "nombre":"Batman",
-        "descripcion":"Figura coleccionable de Batman",
-        "imagen":"https://images.unsplash.com/photo-1561994508-07f91d13a9ff?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1700&q=80",
+        "nombre":"AudiA6",
+        "descripcion":"Automovil de alta gama",
+        "imagen":"https://static.motor.es/fotos-noticias/2018/12/min652x435/precio-audi-a6-45-tfsi-201852676_1.jpg",
         "precio":250,
-        "categoria":"auto",
+        "categoria":"carro",
         "id":2
+    },
+    {
+        "nombre":"BMW325",
+        "descripcion":"Automovil de alta gama",
+        "imagen":"https://hips.hearstapps.com/es.h-cdn.co/cades/contenidos/57716/bmw-325-v8.jpg",
+        "precio":250,
+        "categoria":"carro",
+        "id":3
+    },
+    {
+        "nombre":"MercedezA200",
+        "descripcion":"Automovil de alta gama",
+        "imagen":"https://http2.mlstatic.com/mercedes-benz-a200-2021-D_NQ_NP_828843-MCO43516307485_092020-F.webp",
+        "precio":250,
+        "categoria":"carro",
+        "id":4
+    },
+    {
+        "nombre":"er6f",
+        "descripcion":"Motocicleta deportiva de alta gama",
+        "imagen":"https://www.moriwoki.com/wp-content/uploads/2016/09/Kawasaki-ER-6-Portada-2.jpg",
+        "precio":250,
+        "categoria":"motocicleta",
+        "id":5
+    },
+    {
+        "nombre":"Versys",
+        "descripcion":"Motocicleta deportiva de alta gama",
+        "imagen":"https://i.blogs.es/cdd78e/650_1000_kawasaki_versys_650_25_650/450_1000.jpg",
+        "precio":250,
+        "categoria":"motocicleta",
+        "id":6
     }
 ]

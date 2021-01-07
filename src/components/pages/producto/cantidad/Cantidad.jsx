@@ -3,7 +3,7 @@ import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
 import "./cantidad.css";
 
-const Cantidad = ({ id, stock, initial }) => {
+const Cantidad = ({ id, stock, initial, carrito }) => {
   
   const [cantidad, setCantidad] = useState(initial);
 
@@ -13,6 +13,8 @@ const Cantidad = ({ id, stock, initial }) => {
   const restar = () => {
     cantidad > 1 ? setCantidad(cantidad - 1) : setCantidad(initial)
   }
+
+  
 
   return (
     <>
@@ -34,7 +36,9 @@ const Cantidad = ({ id, stock, initial }) => {
              onClick={()=>{sumar()}}
           />
         </div>
+        <button className="btn btn-primary mt-3" onClick={()=>carrito(cantidad)}>Agregar al Carrito</button>
       </div>
+
     </>
   );
 };
