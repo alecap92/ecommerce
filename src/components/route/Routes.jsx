@@ -1,4 +1,4 @@
-import React,{Fragment} from "react";
+import React,{Fragment, useState} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,12 +9,19 @@ import Category from "../pages/catogory/Category";
 import Inicio from "../pages/Inicio";
 // import Producto from "../pages/producto/Producto";
 import ProductoDetalle from "../pages/producto/ProductoDetalle";
-
+import {Store} from '../../store';
+import Carrito from "../pages/carrito/Carrito";
 
 
 export const AppRouter = () => {
-    
+  
+  const [data, setData] = useState({
+    items:[],
+    cantidad:0
+  });
+
   return  (
+    <Store.Provider value={[data, setData]}>
         <Router>
            <Navbar/>
           <Fragment>
@@ -30,11 +37,15 @@ export const AppRouter = () => {
              <Route exact path="/">
                 <Inicio/>
              </Route>
+             <Route exact path="/cart">
+               <Carrito/>
+             </Route>
             </Switch>
 
             </div>
           </Fragment>
         </Router>
+        </Store.Provider>
       );
 }
 

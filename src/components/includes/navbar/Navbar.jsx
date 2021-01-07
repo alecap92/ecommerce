@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import './navbar.css'
+import {Store} from '../../../store'
+
 const Navbar = () => {
+    const [data, setData] = useContext(Store);
+
     return (
         <>
                 <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -21,10 +25,12 @@ const Navbar = () => {
                             </div>
                         </div>
                     </div>
+                    <Link to="/cart">
                     <div className="navcart">
-                        <span>0</span>
+                       <span>{data.cantidad}</span>
                         <AiOutlineShoppingCart/>
                     </div>
+                    </Link>
                 </nav>
         </>
     )

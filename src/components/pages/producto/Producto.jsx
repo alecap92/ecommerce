@@ -14,7 +14,6 @@ const Producto = ({ accion }) => {
     }, 2000);
   });
   
-
   useEffect(() => {
     getProducts.then( ( rta ) => { 
       // console.log(rta)
@@ -46,8 +45,7 @@ const Producto = ({ accion }) => {
               <div className="card-body">
                 <Link to={`/producto/${item.nombre}`}><h5 className="card-title">{item.nombre}</h5></Link> 
                 <p className="card-text">{item.descripcion}</p>
-                {/* <strong>{item.precio}</strong> */}
-                {/* <Cantidad id={item.id} stock={5} initial={1} /> */}
+                
                 <br />
                 <Link to={`/producto/${item.nombre}`}><button className="btb btn-primary">Ver producto</button></Link> 
               </div>

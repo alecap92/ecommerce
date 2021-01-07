@@ -14,7 +14,6 @@ const Cantidad = ({ id, stock, initial, carrito }) => {
     cantidad > 1 ? setCantidad(cantidad - 1) : setCantidad(initial)
   }
 
-  
 
   return (
     <>

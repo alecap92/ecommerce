@@ -1,10 +1,13 @@
-import React,{ useState, useEffect }  from 'react'
+import React,{ useState, useEffect,useContext }  from 'react'
 import ProductoApi from "../../includes/productoApi/ProductoApi.json";
 import {useParams} from 'react-router-dom'
 import Cantidad from './cantidad/Cantidad';
+import {Store} from '../../../store'
 
 const ProductoDetalle = ({ accion }) => {
 
+  const [data, setData] = useContext(Store);
+console.log(data)
     const { productName } = useParams ();
 
     const [items, setItems] = useState([]);
@@ -13,7 +16,6 @@ const ProductoDetalle = ({ accion }) => {
       setTimeout(() => {
         const lista =  ProductoApi.find((item)=> 
           item.nombre === productName
-
         );
         resolve(lista);
       }, 2000);
@@ -25,14 +27,17 @@ const ProductoDetalle = ({ accion }) => {
     }, []);
   
     const carrito = (cantidad)=>{
-      
-      alert(`Meli agrego ${cantidad}  de ${items.nombre}`)
+      setData({
+        ...data,
+        cantidad: data.cantidad + cantidad,
+        items:[...data.items,items]
+      })
+      // alert(`Meli agrego ${cantidad}  de ${items.nombre}`)
     }
 
     return (
         <>
             {
-             
                 <div className="row">
                <div className="col-4">
                    <img 
