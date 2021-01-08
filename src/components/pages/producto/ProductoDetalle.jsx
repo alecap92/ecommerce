@@ -7,7 +7,7 @@ import {Store} from '../../../store'
 const ProductoDetalle = ({ accion }) => {
 
   const [data, setData] = useContext(Store);
-console.log(data)
+
     const { productName } = useParams ();
 
     const [items, setItems] = useState([]);
