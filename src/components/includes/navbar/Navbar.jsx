@@ -7,6 +7,19 @@ import {Store} from '../../../store'
 const Navbar = () => {
     const [data, setData] = useContext(Store);
 
+
+    const mostrarWidgetCart = ()=>{
+       const selector = document.querySelector('.cartWidget')
+       
+       if(selector.classList.contains('d-show')){
+           selector.classList.remove('d-show');
+           selector.classList.add("d-none");
+        }else{
+            selector.classList.remove("d-none");
+            selector.classList.add("d-show");
+        }
+    }
+
     return (
         <>
                 <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -25,12 +38,12 @@ const Navbar = () => {
                             </div>
                         </div>
                     </div>
-                    <Link to="/cart">
-                    <div className="navcart">
+                    {/* <Link to="/cart"> */}
+                    <div className="navcart" onClick={mostrarWidgetCart}>
                        <span>{data.cantidad}</span>
                         <AiOutlineShoppingCart/>
                     </div>
-                    </Link>
+                    {/* </Link> */}
                 </nav>
         </>
     )

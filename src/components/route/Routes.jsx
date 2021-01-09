@@ -11,6 +11,7 @@ import Inicio from "../pages/Inicio";
 import ProductoDetalle from "../pages/producto/ProductoDetalle";
 import {Store} from '../../store';
 import Carrito from "../pages/carrito/Carrito";
+import CartWidget from "../includes/cartWidget/CartWidget";
 
 
 export const AppRouter = () => {
@@ -24,6 +25,7 @@ export const AppRouter = () => {
     <Store.Provider value={[data, setData]}>
         <Router>
            <Navbar/>
+           <CartWidget/>
           <Fragment>
               <div className="container py-5">
             <Switch>
