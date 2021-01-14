@@ -27,12 +27,27 @@ const ProductoDetalle = ({ accion }) => {
     }, []);
   
     const carrito = (cantidad)=>{
-      setData({
-        ...data,
-        cantidad: data.cantidad + cantidad,
-        items:[...data.items,items]
-      })
-      // alert(`Meli agrego ${cantidad}  de ${items.nombre}`)
+      const productoAgregado = {
+        ...items
+      }
+      
+        if(data.items.find(item =>  item.nombre === items.nombre )){
+          const productoEncontrado = data.items.find(item =>  item.nombre === items.nombre )
+          productoEncontrado.cantidad += cantidad
+          console.log('repetido');
+          setData({
+            ...data,
+            cantidad: data.cantidad + cantidad,
+            items:[...data.items]
+          })
+      }else{
+        productoAgregado.cantidad = cantidad
+        setData({
+          ...data,
+          cantidad: data.cantidad + cantidad,
+          items:[...data.items,productoAgregado]
+        })
+      } 
     }
 
     return (

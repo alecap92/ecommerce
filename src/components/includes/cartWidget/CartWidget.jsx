@@ -17,10 +17,12 @@ const CartWidget = () => {
                         <h4>{data.items > 0 ?   'Tu carrito esta vacio' : 'Tus productos seleccionados:'}</h4>
                     </div>
                 
-                    { data.items.map((item)=>
-                        <>
-                            <p>{data.cantidad} - {item.nombre}</p>
-                        </>
+                    { data.items.map((item,id)=>
+                        
+                            <div key={id}>
+                              <p>{item.cantidad} - {item.nombre}</p>
+                            </div>
+                        
                     ) }
                     <br/>
                     <div className="d-flex justify-content-center">
